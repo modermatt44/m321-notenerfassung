@@ -8,6 +8,8 @@ import ch.m321.m321_notenerfassung.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Service class for managing notes.
  */
@@ -48,6 +50,14 @@ public class NoteService {
   note.setNote(noteValue);
   return noteRepository.save(note);
  }
+
+ /**
+  * Retrieves all notes.
+  * @return a list of all notes
+  */
+ public List<Note> getAllNotes() {
+   return noteRepository.findAll();
+  }
 
  /**
   * Deletes a note by its ID.

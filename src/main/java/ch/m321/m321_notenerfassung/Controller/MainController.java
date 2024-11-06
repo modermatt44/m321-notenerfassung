@@ -59,6 +59,15 @@ public class MainController {
   }
 
   /**
+   * Endpoint to retrieve all notes.
+   * @return a list of all notes
+   */
+  @GetMapping("/getNotes")
+    public List<Note> getNotes() {
+        return noteService.getAllNotes();
+    }
+
+  /**
    * Endpoint to delete a note from a user.
    *
    * @param noteId the ID of the note
