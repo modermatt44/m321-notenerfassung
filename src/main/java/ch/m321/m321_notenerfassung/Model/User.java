@@ -34,7 +34,7 @@ public class User {
   /**
    * The note id.
    */
-  @OneToMany(mappedBy = "user")
+  @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
   @JsonManagedReference
   private List<Note> notes;
 
@@ -186,4 +186,42 @@ public class User {
   public void setUpdatedAt(Date updatedAt) {
     this.updatedAt = updatedAt;
   }
+
+    /**
+     * Gets the notes.
+     *
+     * @return the notes
+     */
+    public List<Note> getNotes() {
+      return notes;
+    }
+
+    /**
+     * Sets the notes.
+     *
+     * @param notes the notes to set
+     */
+    public void setNotes(List<Note> notes) {
+      this.notes = notes;
+    }
+
+    /**
+     * Adds a note.
+     *
+     * @param note the note to add
+     */
+    public void addNote(Note note) {
+      notes.add(note);
+      note.setUser(this);
+    }
+
+    /**
+     * Removes a note.
+     *
+     * @param note the note to remove
+     */
+    public void removeNote(Note note) {
+      notes.remove(note);
+      note.setUser(null);
+    }
 }

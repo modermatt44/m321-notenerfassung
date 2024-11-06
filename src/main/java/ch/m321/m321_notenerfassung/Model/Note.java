@@ -52,4 +52,12 @@ public class Note {
   public void setNote(int note) {
     this.note = note;
   }
+
+  public User getUser() {
+      return user;
+  }
+
+  public void setUser(User user) {
+    this.user = user;
+  }
 }
