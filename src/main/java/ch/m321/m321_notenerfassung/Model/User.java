@@ -8,6 +8,9 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Entity class representing a User.
+ */
 @Table(name = "user")
 @Entity
 public class User {
@@ -32,7 +35,7 @@ public class User {
   private String email;
 
   /**
-   * The note id.
+   * The notes associated with the user.
    */
   @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
   @JsonManagedReference
@@ -187,41 +190,41 @@ public class User {
     this.updatedAt = updatedAt;
   }
 
-    /**
-     * Gets the notes.
-     *
-     * @return the notes
-     */
-    public List<Note> getNotes() {
-      return notes;
-    }
+  /**
+   * Gets the notes.
+   *
+   * @return the notes
+   */
+  public List<Note> getNotes() {
+    return notes;
+  }
 
-    /**
-     * Sets the notes.
-     *
-     * @param notes the notes to set
-     */
-    public void setNotes(List<Note> notes) {
-      this.notes = notes;
-    }
+  /**
+   * Sets the notes.
+   *
+   * @param notes the notes to set
+   */
+  public void setNotes(List<Note> notes) {
+    this.notes = notes;
+  }
 
-    /**
-     * Adds a note.
-     *
-     * @param note the note to add
-     */
-    public void addNote(Note note) {
-      notes.add(note);
-      note.setUser(this);
-    }
+  /**
+   * Adds a note.
+   *
+   * @param note the note to add
+   */
+  public void addNote(Note note) {
+    notes.add(note);
+    note.setUser(this);
+  }
 
-    /**
-     * Removes a note.
-     *
-     * @param note the note to remove
-     */
-    public void removeNote(Note note) {
-      notes.remove(note);
-      note.setUser(null);
-    }
+  /**
+   * Removes a note.
+   *
+   * @param note the note to remove
+   */
+  public void removeNote(Note note) {
+    notes.remove(note);
+    note.setUser(null);
+  }
 }

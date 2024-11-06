@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"ch.m321.m321_notenerfassung"},{"l":"ch.m321.m321_notenerfassung.Controller"},{"l":"ch.m321.m321_notenerfassung.Dto"},{"l":"ch.m321.m321_notenerfassung.Model"},{"l":"ch.m321.m321_notenerfassung.Repository"},{"l":"ch.m321.m321_notenerfassung.Service"}];updateSearchResults();

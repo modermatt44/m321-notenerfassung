@@ -1,49 +1,62 @@
 package ch.m321.m321_notenerfassung.Dto;
 
+/**
+ * Data Transfer Object for Note.
+ */
 public class NoteDto {
-    private Long id;
     private String name;
     private int note;
     private Long userId;
 
+    /**
+     * Default constructor.
+     */
     public NoteDto() {
     }
 
-    public NoteDto(Long id, String name, Long userId, int note) {
-        this.id = id;
+    /**
+     * Constructor with parameters.
+     *
+     * @param name the name of the note
+     * @param note the note value
+     */
+    public NoteDto(String name, int note) {
         this.name = name;
-        this.userId = userId;
         this.note = note;
     }
 
-    public Long getId() {
-        return id;
-    }
-
+    /**
+     * Gets the name of the note.
+     *
+     * @return the name of the note
+     */
     public String getName() {
         return name;
     }
 
-    public Long getUserId() {
-        return userId;
-    }
-
+    /**
+     * Gets the note value.
+     *
+     * @return the note value
+     */
     public int getNote() {
         return note;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
+    /**
+     * Sets the name of the note.
+     *
+     * @param name the name of the note
+     */
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
+    /**
+     * Sets the note value.
+     *
+     * @param note the note value
+     */
     public void setNote(int note) {
         this.note = note;
     }
